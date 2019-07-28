@@ -1,15 +1,26 @@
-<Config>
+<?xml version="1.0" encoding="UTF-8"?>
+<Config Version="0.1">
   <Checks>
+    <CPUCores Level="Warning" State="GE">2</CPUCores>
+    <Memory></Memory>
     <Disks>
       <Sizes>
       </Sizes>
       <DiskFormats>
+        <DiskFormat Level="Info">NTFS</DiskFormat>
+        <DiskFormat Level="Error" State="NE">FAT32</DiskFormat>
       </DiskFormats>
     </Disks>
     <RegionalSettings>
-      <Cultures><Culture>en-AU</Culture></Cultures>
-      <UICultures><UICulture>en-US</UICulture><UICulture>en-AU</UICulture><UICulture>en-GB</UICulture></UICultures>
-      <TimeZones><TimeZone>AUS Eastern Standard Time</TimeZone></TimeZones>
+      <Cultures Level="Warning"><Culture>en-AU</Culture></Cultures>
+      <UICultures Level="Warning"><UICulture>en-US</UICulture><UICulture>en-AU</UICulture><UICulture>en-GB</UICulture></UICultures>
+      <SystemLocale Level="Warning">en-AU</SystemLocale>
+      <TimeZoneSettings>
+        <TimeZones Attrib="id" Level="Warning">
+          <TimeZone>AUS Eastern Standard Time</TimeZone>
+        </TimeZones>
+        <DaylightSavings Attrib="SupportsDaylightSavingsTime" Level="Warning">True</DaylightSavings>
+      </TimeZoneSettings>
     </RegionalSettings>
     <Updates>
       <Update State="Installed" Level="Error">Cumulative</Update>
@@ -23,6 +34,8 @@
       <VCRedist State="Installed" Level="Error">2013</VCRedist>
       <VCRedist State="Installed" Level="Error">2019</VCRedist>
     </VCRedists>
+    <HyperVisors>
+    </HyperVisors>
   </Checks>
   <Versions>
     <Version>
@@ -48,6 +61,7 @@
           <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Info" State="EQ">1</RegistryKey>
           <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Warning" State="GT">1</RegistryKey>
           <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Warning" State="LT">1</RegistryKey>
+          <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Warning" State="NE">1</RegistryKey>
         </RegistryKeys>
       </Checks>
     </Version>
