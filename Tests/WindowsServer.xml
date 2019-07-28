@@ -1,16 +1,74 @@
 <Config>
-  <General>
+  <Checks>
     <Disks>
       <Sizes>
       </Sizes>
       <DiskFormats>
       </DiskFormats>
     </Disks>
-    <Updates/>
-  </General>
+    <RegionalSettings>
+      <Cultures><Culture>en-AU</Culture></Cultures>
+      <UICultures><UICulture>en-US</UICulture><UICulture>en-AU</UICulture><UICulture>en-GB</UICulture></UICultures>
+      <TimeZones><TimeZone>AUS Eastern Standard Time</TimeZone></TimeZones>
+    </RegionalSettings>
+    <Updates>
+      <Update State="Installed" Level="Error">Cumulative</Update>
+      <Update State="Installed" Level="Error">ServicingStack</Update>
+      <Update State="Installed" Level="Warning">NETFramework</Update>
+      <Update State="Installed" Level="Info">AdobeFlashPlayer</Update>
+    </Updates>
+    <VCRedists>
+      <VCRedist State="Installed" Level="Error">2010</VCRedist>
+      <VCRedist State="Installed" Level="Error">2012</VCRedist>
+      <VCRedist State="Installed" Level="Error">2013</VCRedist>
+      <VCRedist State="Installed" Level="Error">2019</VCRedist>
+    </VCRedists>
+  </Checks>
   <Versions>
     <Version>
+      <Caption>Microsoft Windows Server 2019*</Caption>
+      <Build>17763</Build>
+      <Checks>
+        <Features>
+          <Feature State="NotInstalled" Level="Error">FS-SMB1</Feature>
+          <Feature State="NotInstalled" Level="Error">XPS-Viewer</Feature>
+          <Feature State="Installed" Level="Error">Windows-Defender</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-45-Core</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-45-Features</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-Core</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-Features</Feature>
+        </Features>
+        <Roles>
+          <Role State="Installed" Level="Error"></Role>
+        </Roles>
+        <Services>
+          <Service Startup="Disabled" Level="Error"></Service>
+        </Services>
+        <RegistryKeys>
+          <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Info" State="EQ">1</RegistryKey>
+          <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Warning" State="GT">1</RegistryKey>
+          <RegistryKey Key="HKLM:\Software\Microsoft\Key" Level="Warning" State="LT">1</RegistryKey>
+        </RegistryKeys>
+      </Checks>
+    </Version>
+    <Version>
+      <Caption>Windows Server 2016</Caption>
+      <Build></Build>
+      <Checks>
+        <Features>
+          <Feature State="NotInstalled" Level="Error">FS-SMB1</Feature>
+          <Feature State="NotInstalled" Level="Error">XPS-Viewer</Feature>
+          <Feature State="Installed" Level="Error">Windows-Defender</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-45-Core</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-45-Features</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-Core</Feature>
+          <Feature State="Installed" Level="Error">NET-Framework-Features</Feature>
+        </Features>
+        <Roles>
+          <Role State="Installed" Level="Error"></Role>
+        </Roles>
 
+      </Checks>      
     </Version>
   </Versions>
 </Config>
