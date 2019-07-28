@@ -1,23 +1,47 @@
 <#
     .SYNOPSIS
-        Runs Pester tests against a Windows Server 2019 VM to confirm a desired configuration
+        Runs Pester tests against a Windows OS to confirm a desired configuration
 #>
 #Requires -RunAsAdministrator
 #Requires -PSEdition Desktop
 [CmdletBinding()]
 Param(
-    [Parameter()] $Version = "1809"
+    ####[Parameter()] $Version = "1809"  ###not needed
+    
+    ## Add Log Filename
+    ## Add Report File
+    ## Add Detail Level
 )
 
 Write-Host -ForegroundColor Cyan "`n`tChecking required module versions."
 $Modules = @("Pester", "LatestUpdate", "VcRedist")
 ForEach ($Module in $Modules) {
     If ([Version]((Find-Module -Name $Module).Version) -gt [Version]((Get-Module -Name $Module | Select-Object -Last 1).Version)) {
-        Write-Host -ForegroundColor Cyan "`tInstalling latest $Module module."
+        Write-Host -ForegroundColor Cyan "`n`tInstalling latest $Module module."
         Install-Module -Name $Module -SkipPublisherCheck -Force
     }
     Import-Module -Name $Module -Force
 }
+
+<#
+$osInfo = Get-CimInstance -ClassName Win32_OperatingSystem
+$osInfo.ProductType
+
+Work Station (1)
+Domain Controller (2)
+Server (3)
+#>
+
+#Validate Which XML to load Server Or Workstation
+
+#Write out Version of XML
+
+#Include Report File
+
+# Option for Detailed Output
+
+
+
 
 Describe 'Windows Server 2019 validation tests' {
     Context "Validate operating system version" {
